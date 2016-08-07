@@ -2,8 +2,8 @@
 
 <% @restaurants.each do |restaurant| %>
   <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p></br>
-  <p><%= restaurant.address %></p>
-
-<%= link_to 'Log in', new_session_path %> or <%= link_to 'Sign Up', new_user_path %>
-
+  <p><%= restaurant.picture %></p></br>
+  <p><%= restaurant.description %></p></br>
+  <p><%= restaurant.address %></p></br>
+  <p><%= restaurant.phone %></p>
 <% end %>
