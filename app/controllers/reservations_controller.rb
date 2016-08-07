@@ -16,6 +16,8 @@ class ReservationsController < ApplicationController
 
     if @reservation.save
       redirect_to restaurants_url, notice: "reservation made"
+    else
+      render :new
     end
   end
 
