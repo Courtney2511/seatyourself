@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+  before_action :ensure_logged_in, only: :create
   before_action :load_restaurant
 
   def show
