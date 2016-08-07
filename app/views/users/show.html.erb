@@ -1,2 +1,22 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<p>Hello <%= @user.name %>!!</p>
+
+<p>Here are your current reservations:</p>
+
+<table>
+  <tr>
+    <th><b>Date and Time</b></th>
+    <th><b>Guests</b></th>
+    <th><b>Restaurant</b></th>
+  </tr>
+
+<% @user.reservations.each do |reservation| %>
+  <tr>
+    <td><%= reservation.date_and_time %></td>
+    <td><%= reservation.party_size %></td>
+    <td><%= reservation.restaurant.name %></td>
+  </tr>
+
+<% end %>
+
+
+</table>
