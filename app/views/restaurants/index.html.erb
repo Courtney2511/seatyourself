@@ -1,9 +1,14 @@
-<h1>Restaurants</h1>
+<div class="header">
+  <h1>Restaurants</h1>
+</div>
 
-<% @restaurants.each do |restaurant| %>
-  <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p></br>
-  <p><%= restaurant.picture %></p></br>
-  <p><%= restaurant.description %></p></br>
-  <p><%= restaurant.address %></p></br>
-  <p><%= restaurant.phone %></p>
-<% end %>
+<div id="index">
+  <% @restaurants.each do |restaurant| %>
+    <div class="restaurant">
+      <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p></br>
+      <p><%= restaurant.picture %></p></br>
+      <p class="bold"><%= restaurant.address %>, <%= restaurant.phone %></p>
+      <p><%= restaurant.description %></p></br>
+    </div>
+  <% end %>
+</div>
