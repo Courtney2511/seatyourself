@@ -1,10 +1,18 @@
-<div>
+<div class="restaurant-header container-fluid">
   <h3><%= @restaurant.name %></h3>
 </div>
-<p>Address: <%= @restaurant.address %></p>
 
-<% if current_user %>
+<div class="reservation container"></div>
+  <p><% if current_user %>
   <%= link_to 'Make a Reservation Here!', new_restaurant_reservation_path(@restaurant) %>
-<% end %>
+  <% end %></p>
+</div>
+
+<div class ="about container">
+  <h4>About <%= @restaurant.name %></h4>
+  <p>Address: <%= @restaurant.address %>, <%= @restaurant.phone %></p>
+  <p><%= @restaurant.description %></p>
+</div>
+
 
 <%= link_to 'Back', restaurants_path %>

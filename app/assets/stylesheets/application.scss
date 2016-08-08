@@ -22,8 +22,13 @@
    font-family: arial;
  }
 
+ .logo {
+   float: left;
+ }
+
  .userinfo {
    float: right;
+   margin-top: 20px;
  }
 
  /* Header */
@@ -32,9 +37,9 @@
    background-color: white;
  }
 
-.header a {
-  background-color: orange;
+.sign-up {
+  background-color: #FF6600;
   border-radius: 5px;
   padding: 5px;
-  color: white;  
+  color: white;
 }

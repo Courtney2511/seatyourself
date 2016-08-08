@@ -1,4 +1,6 @@
-<h1>Sign Up!</h1>
+<div class="create-account container">
+
+<h1>Welcome to SeatYourself!</h1>
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
@@ -12,20 +14,28 @@
     </div>
   <% end %>
 
-  <%= f.label :name %>:
-  <%= f.text_field :name %> </br>
+<div class="field">
+  <%= f.text_field :name, placeholder: "name" %> </br>
+</div>
 
-  <%= f.label :email %>:
-  <%= f.text_field :email %> </br>
+<div class="field">
+  <%= f.text_field :email, placeholder: "email" %> </br>
+</div>
 
-  <%= f.label :password %>:
-  <%= f.text_field :password %> </br>
+<div class="field">
+  <%= f.text_field :password, placeholder: "password" %> </br>
+</div>
 
-  <%= f.label :password_confirmation %>:
-  <%= f.text_field :password_confirmation %> </br>
+<div class="field">
+  <%= f.text_field :password_confirmation, placeholder: "confirmation" %> </br>
+</div>
 
-  <%= f.submit %>
+  <%= f.submit "Create Account", class: "submit"%>
 
 <% end %>
 
-<%=   link_to 'Back', restaurants_path %> 
+<div class="back">
+  <%= link_to 'Back', restaurants_path %>
+</div>
+
+</div>
