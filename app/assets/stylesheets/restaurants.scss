@@ -5,8 +5,16 @@
 
 /* Index */
 
+.title {
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
 .index {
   background-color: white;
+  border-radius: 5px; /* not working */
 }
 
 .restaurant {

@@ -14,6 +14,9 @@
  *= require_self
  */
 
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
  body {
    background-color: #EBEBE6;
    font-family: arial;
@@ -22,3 +25,16 @@
  .userinfo {
    float: right;
  }
+
+ /* Header */
+
+ .header {
+   background-color: white;
+ }
+
+.header a {
+  background-color: orange;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;  
+}

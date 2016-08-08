@@ -1,8 +1,8 @@
-<div class="header">
+<div class="title container">
   <h1>Restaurants</h1>
 </div>
 
-<div id="index">
+<div class="container">
   <% @restaurants.each do |restaurant| %>
     <div class="restaurant">
       <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p></br>
