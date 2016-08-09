@@ -32,12 +32,26 @@
 .restaurant-header {
   background-color: #454545;
   color: white;
+  height: 150px;
 }
 
 .reservation {
   background-color: white;
+  margin-top: 30px;
+  border-radius: 5px;
 }
 
 .about {
   background-color: white;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+h3 {
+  display: inline-block;
+}
+
+.restaurant-header img {
+  margin-top: 20px;
+  border-radius: 10px;
 }

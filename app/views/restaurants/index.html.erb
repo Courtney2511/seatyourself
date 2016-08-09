@@ -6,7 +6,7 @@
   <% @restaurants.each do |restaurant| %>
     <div class="restaurant">
       <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p></br>
-      <p><%= restaurant.picture %></p></br>
+      <img src="<%= restaurant.picture %>" height="150" width="150">
       <p class="bold"><%= restaurant.address %>, <%= restaurant.phone %></p>
       <p><%= restaurant.description %></p></br>
     </div>
