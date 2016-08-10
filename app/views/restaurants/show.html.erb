@@ -9,10 +9,22 @@
   <% end %></p>
 </div>
 
-<div class ="about container">
+<div class="about container">
   <h4>About <%= @restaurant.name %></h4>
   <p>Address: <%= @restaurant.address %>, <%= @restaurant.phone %></p>
   <p><%= @restaurant.description %></p>
 </div>
 
+<div class="nearby container">
+  <h4>Nearby Restaurants</h4>
+  <ol>
+    <% @nearby_restaurants.each do |restaurant| %>
+      <li>
+        <p><%= restaurant.name %></p>
+        <p><%= restaurant.address %></p>
+        <p><%= restaurant.display_distance_to(@restaurant) %> km away</p>
+      </li>
+      <% end %>
+  </ol>
+</div>
 <%= link_to 'Back', restaurants_path %>
