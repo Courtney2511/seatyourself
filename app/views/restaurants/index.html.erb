@@ -2,13 +2,19 @@
   <h1>Restaurants</h1>
 </div>
 
-<div class="container">
-  <% @restaurants.each do |restaurant| %>
-    <div class="restaurant">
-      <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p></br>
-      <img src="<%= restaurant.picture %>" height="150" width="150">
-      <p class="bold"><%= restaurant.address %>, <%= restaurant.phone %></p>
-      <p><%= restaurant.description %></p></br>
-    </div>
-  <% end %>
+<div class="search container">
+  <button class="btn find-nearbys">Find Nearby Restaurants!</button></br>
+
+  <h3>Find Restaurants near:</h3>
+
+  <%= form_tag restaurants_path, method: :get do  %>
+      <%= text_field_tag :search_address, params[:search_address], placeholder: "eg 123 Yonge Street, Toronto", size: 75 %>
+      <%= submit_tag "go!", :class => 'btn btn-primary' %>
+    <% end %>
 </div>
+
+<section id="restaurants-list">
+<div class="container">
+  <%= render 'restaurants' %>
+</div>
+</section>

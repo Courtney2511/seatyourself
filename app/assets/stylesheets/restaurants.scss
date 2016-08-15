@@ -12,6 +12,10 @@
   border-radius: 5px;
 }
 
+.search {
+  padding: 10px;
+}
+
 .index {
   background-color: white;
   border-radius: 5px; /* not working */
@@ -37,8 +41,18 @@
 
 .reservation {
   background-color: white;
-  margin-top: 30px;
+  margin-top: 10px;
   border-radius: 5px;
+}
+
+.search {
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.find-nearbys {
+  background-color: #FF6600;
 }
 
 .about {
