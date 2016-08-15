@@ -31,6 +31,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'geocoder'
 
+gem 'figaro'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
