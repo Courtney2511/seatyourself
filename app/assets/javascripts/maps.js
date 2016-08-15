@@ -6,4 +6,10 @@ function initMap(){
     center: latLong,
     zoom: 16
   });
+
+  var marker = new google.maps.Marker({
+    position: latLong,
+    map: map,
+    title: mapPlaceholder.data('name')
+  });
 }
