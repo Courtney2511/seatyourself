@@ -6,27 +6,31 @@
 <div class="reservation container">
   <p><% if current_user %>
   <%= link_to 'Make a Reservation Here!', new_restaurant_reservation_path(@restaurant) %>
+     <% else %>
+     <%= link_to 'Sign up to make a reservation here', new_user_path %>
+     <%= link_to 'Back to restaurants', restaurants_path %>
   <% end %></p>
 </div>
 
 <div class="about container">
   <h4>About <%= @restaurant.name %></h4>
-  <p>Address: <%= @restaurant.address %>, <%= @restaurant.phone %></p>
+  <p><%= @restaurant.address %>, <%= @restaurant.phone %></p>
   <p><%= @restaurant.description %></p>
+
+  <div id="map" data-name="<%= @restaurant.name %>" data-latitude="<%= @restaurant.latitude %>", data-longitude="<%= @restaurant.longitude %>">
+  </div>
+
+
 </div>
 
-<div id="map" data-name="<%= @restaurant.name %>" data-latitude="<%= @restaurant.latitude %>", data-longitude="<%= @restaurant.longitude %>"></div>
 
 <div class="nearby container">
   <h4>Nearby Restaurants</h4>
   <ol>
     <% @nearby_restaurants.each do |restaurant| %>
       <li>
-        <p><%= restaurant.name %></p>
-        <p><%= restaurant.address %></p>
-        <p><%= restaurant.display_distance_to(@restaurant) %> km away</p>
+        <p><em><%= link_to restaurant.name, restaurants_path(@restaurant) %></em>, <%= restaurant.address %> <%= restaurant.display_distance_to(@restaurant) %> km away</p>
       </li>
       <% end %>
   </ol>
 </div>
-<%= link_to 'Back', restaurants_path %>
