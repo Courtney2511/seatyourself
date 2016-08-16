@@ -13,6 +13,7 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @nearby_restaurants = @restaurant.nearbys
+    @reservation = Reservation.new
   end
 
   def new
@@ -45,7 +46,7 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :capacity)
+    params.require(:restaurant).permit(:name, :address, :capacity, reservation_attributes: [:date_and_time, :party_size])
   end
 
 end

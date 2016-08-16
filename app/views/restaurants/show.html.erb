@@ -5,11 +5,24 @@
 
 <div class="reservation container">
   <p><% if current_user %>
-  <%= link_to 'Make a Reservation Here!', new_restaurant_reservation_path(@restaurant) %>
+      <%= link_to 'Make a Reservation Here!', new_restaurant_reservation_path(@restaurant) %>
+      <h3>Make a Reservation Here!</h3>
+      <%= fields_for :reservations do |reservation_form| %>
+
+      <%= reservation_form.label :date_and_time %>:
+      <%= reservation_form.datetime_select :date_and_time %> </br>
+
+      <%= reservation_form.label :party_size %>:
+      <%= reservation_form.number_field :party_size %> </br>
+
+      <%= reservation_form.submit %>
+      <% end %>
+
      <% else %>
-     <%= link_to 'Sign up to make a reservation here', new_user_path %>
-     <%= link_to 'Back to restaurants', restaurants_path %>
-  <% end %></p>
+       <%= link_to 'Sign up to make a reservation here', new_user_path %>
+       <%= link_to 'Back to restaurants', restaurants_path %>
+     <% end %>
+  </p>
 </div>
 
 <div class="about container">

@@ -8,6 +8,8 @@ class Restaurant < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
+  accepts_nested_attributes_for :reservations
+
   def display_distance_to(other_restaurant)
     self.distance_to(other_restaurant, :km).round(3)
   end
