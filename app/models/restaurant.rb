@@ -20,4 +20,5 @@ class Restaurant < ApplicationRecord
   def closing_hour
     20
   end
+
 end

@@ -1,8 +1,8 @@
 <% @restaurants.each do |restaurant| %>
   <div class="restaurant">
-    <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p></br>
-    <img src="<%= restaurant.picture %>" height="150" width="150">
+    <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
+    <img src="<%= restaurant.picture %>" height="100" width="100">
     <p class="bold"><%= restaurant.address %>, <%= restaurant.phone %></p>
-    <p><%= restaurant.description %></p></br>
+    <p><%= truncate(restaurant.description, length: 150) %><%= link_to 'more', restaurant_path(restaurant) if restaurant.description.length > 150 %></p>
   </div>
 <% end %>
