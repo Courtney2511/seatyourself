@@ -27,3 +27,27 @@
 .back {
   float: right;
 }
+
+/* Show */
+
+.reservations {
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.upcoming-reservations {
+  margin: 0 auto;
+}
+
+.date {
+  width: 200px;
+}
+
+.restaurant-name {
+  width: 400px;
+}
+
+td {
+  height: 30px;
+}

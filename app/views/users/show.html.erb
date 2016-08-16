@@ -1,23 +1,25 @@
-<p>Hello <%= @user.name %>!!</p>
 
-<p>Here are your current reservations:</p>
 
-<table>
-  <tr>
-    <th><b>Date and Time</b></th>
-    <th><b>Guests</b></th>
-    <th><b>Restaurant</b></th>
-  </tr>
+<div class="reservations container">
+  <h3>Upcoming Reservations:</h3>
 
-<% @user.reservations.each do |reservation| %>
-  <tr>
-    <td><%= reservation.date_and_time.strftime("%B %d %I:%M %P") %></td>
-    <td><%= reservation.party_size %></td>
-    <td><%= reservation.restaurant.name %></td>
-  </tr>
+  <table class="table upcoming-reservations">
+    <tr>
+      <th class="date"><b>Date and Time</b></th>
+      <th class="guests"><b>Guests</b></th>
+      <th class="restaurant-name"><b>Restaurant</b></th>
+    </tr>
 
-<% end %>
+  <% @user.reservations.each do |reservation| %>
+    <tr>
+      <td><%= reservation.date_and_time.strftime("%B %d %I:%M %P") %></td>
+      <td><%= reservation.party_size %></td>
+      <td><%= link_to reservation.restaurant.name, restaurants_path(@restaurant) %></td>
+    </tr>
 
-</table>
+  <% end %>
 
-<%= link_to 'Restaurants', restaurants_path %>
+  </table>
+
+  <%= link_to 'Restaurants', restaurants_path %>
+</div>
