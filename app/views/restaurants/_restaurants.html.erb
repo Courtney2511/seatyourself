@@ -3,6 +3,6 @@
     <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
     <img src="<%= restaurant.picture %>" height="100" width="100">
     <p class="bold"><%= restaurant.address %>, <%= restaurant.phone %></p>
-    <p><%= truncate(restaurant.description, length: 150) %><%= link_to 'more', restaurant_path(restaurant) if restaurant.description.length > 150 %></p>
+    <p><%= truncate(restaurant.description, length: 150) %><%= link_to 'more', restaurant_path(restaurant)  %></p>
   </div>
 <% end %>
