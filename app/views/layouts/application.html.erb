@@ -21,19 +21,7 @@
       <p id="alert"><%= flash[:alert] %></p>
     <% end %>
 
-  <div class="header container-fluid">
-
-    <h3 class="logo">SeatYourself</h3>
-
-    <div class="userinfo">
-      <% if current_user %>
-        Welcome back <%= link_to current_user.name, user_path(current_user.id) %>! <%= link_to "Log out", session_path("current"), :method => :delete %>
-        <% else %>
-        <%= link_to "Sign in", new_session_path %> <%= link_to "Sign up", new_user_path, class: "sign-up" %>
-      <% end %>
-    </div>
-
-  </div>
+    <%= render 'layouts/header' %>
 
     <%= yield %>
 
