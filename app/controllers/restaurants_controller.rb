@@ -1,3 +1,4 @@
+# Restaurant Controller
 class RestaurantsController < ApplicationController
   def index
     if params[:search_address]

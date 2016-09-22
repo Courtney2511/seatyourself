@@ -1,3 +1,4 @@
+# Reservations Controller
 class ReservationsController < ApplicationController
   before_action :ensure_logged_in, only: :create
   before_action :load_restaurant
@@ -16,12 +17,11 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
 
     if @reservation.save
-      redirect_to restaurants_url, notice: "reservation made"
+      redirect_to user_path(current_user.id), notice: 'Reservation booked!'
     else
       render :new
     end
   end
-
 
   def destroy
     @reservation = Reservation.find(params[:id])
@@ -38,6 +38,4 @@ class ReservationsController < ApplicationController
   def load_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
-
-
 end
